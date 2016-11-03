@@ -20,4 +20,5 @@ Create new automation project.
    * [BDD Editor plugin](https://qmetry.github.io/qaf/editor/bdd/eclipse/) - BDD and Gherkin Editor for BDD test authoring
 
 2. Create New Project project
-   Clone/Download [QAF-Blank-Project](https://github.com/qmetry/qaf-blank-project). You can directly import project in Eclipse.
+
+   Download [qaf-example-project-skeleton.zip](https://github.com/qmetry/qaf-step-by-step-tutorial/releases/download/Exercise-1/qaf-example-project-skeleton.zip). You can directly import project in Eclipse. It uses ANT as build tool and IVY for dependncy management.
