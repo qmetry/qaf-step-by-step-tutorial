@@ -20,4 +20,4 @@ Create new automation project.
 
 2. Create New Project project
 
-   Download [qaf-example-project-skeleton.zip](https://github.com/qmetry/qaf-step-by-step-tutorial/releases/download/Exercise-1/qaf-example-project-skeleton.zip). You can directly import project in Eclipse. It uses ANT as build tool and IVY for dependncy management.
+   Download [qaf-example-project-skeleton.zip](https://github.com/qmetry/qaf-step-by-step-tutorial/releases/download/Exercise-1/qaf-example-project-skeleton.zip). You can directly import project in Eclipse, refer [Importing existing projects](http://help.eclipse.org/kepler/topic/org.eclipse.platform.doc.user/tasks/tasks-importproject.htm?cp=0_3_10_0) for help. Example project uses ANT as build tool and IVY for dependncy management.
