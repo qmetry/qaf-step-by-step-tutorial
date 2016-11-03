@@ -4,7 +4,10 @@ qaf getting started tutorial provide step by step exercise
 This repository provides a step by step guide to start using QAF.
 
 #Exercise-2
-In this tutorial we will first create sample test case to automate google serach.
+
+After completion of [Exercise-1](../tree/Exercise-1) you will have your local enviroment ready with project skeleton in eclipse. Now you are ready to create your first automated test. 
+
+In this exercise we will create sample test case to automate google serach.
 Conisder following test case:
 ```
 Open Google search page
