@@ -5,7 +5,7 @@ This repository provides a step by step guide to start using QAF.
 
 # Exercise-2
 
-** Table of contents **
+**Table of contents**
  1. [Create locator repository](#create_loc_repo)
  2. [Create your first Test case in BDD](#create_first_test_bdd)
  3. [Create your first Test case in Java](#create_first_test_java)
@@ -36,19 +36,19 @@ btn.search = name=btnG
 <a name="create_first_test_bdd" href="#" />
 ## Create your first Test case in BDD
 
-1. Create new BDD file named `suite-1.bdd` in scenarios dir
-2. Open this file in BDD editor
-3. Create new Scenario with name 'SampleTest', Description 'Sample Test Scenario' and group 'SMOKE'.
+ 1. Create new BDD file named `suite-1.bdd` in scenarios dir
+ 2. Open this file in BDD editor
+ 3. Create new Scenario with name 'SampleTest', Description 'Sample Test Scenario' and group 'SMOKE'.
     * if you are using QAS create new scenario following new scenario wizard
     * if you are using eclipse with QAF bdd editor press ctrl+space and select Scenario snnipet
-4. You will have scenario skeleton ready as below:
+ 4. You will have scenario skeleton ready as below:
    ``` javascript
     SCENARIO: SampleTest
     META-DATA: {"description":"Sample Test Scenario","groups":["SMOKE"]}
 
     END
    ```
-5. Call teststeps in your Scenario. To start with for this example of google you can call predefined steps avialable with QAF-Support jar (Make sure that ivy has QAF-Support dependency added). Call steps as bellow 
+ 5. Call teststeps in your Scenario. To start with for this example of google you can call predefined steps avialable with QAF-Support jar (Make sure that ivy has QAF-Support dependency added). Call steps as bellow 
  
     ``` javascript
     SCENARIO: SampleTest
