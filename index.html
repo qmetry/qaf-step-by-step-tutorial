@@ -1,0 +1,198 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" href="stylesheets/github-dark.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Qaf-step-by-step-tutorial</title>
+  <meta name="description" content="qaf getting started tutorial provide step by step exercise ">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Qaf-step-by-step-tutorial</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">qaf getting started tutorial provide step by step exercise </p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/qmetry/qaf-step-by-step-tutorial/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/qmetry/qaf-step-by-step-tutorial/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/qmetry/qaf-step-by-step-tutorial" class="code">View Qaf-step-by-step-tutorial on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>
+<a id="qaf-step-by-step-tutorial" class="anchor" href="#qaf-step-by-step-tutorial" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>qaf-step-by-step-tutorial</h1>
+
+<p>qaf getting started tutorial provide step by step exercise </p>
+
+<p>This repository provides a step by step guide to start using QAF.</p>
+
+<h1>
+<a id="exercise-2" class="anchor" href="#exercise-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Exercise-2</h1>
+
+<h5>
+<a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table of contents</h5>
+
+<ol>
+<li><a href="#create-locator-repository">Create locator repository</a></li>
+<li><a href="#create-your-first-test-case-in-bdd">Create your first Test case in BDD</a></li>
+<li><a href="#create-your-first-test-case-in-java">Create your first Test case in Java</a></li>
+<li><a href="#references">References</a></li>
+</ol>
+
+<hr>
+
+<p>After completion of <a href="https://github.com/qmetry/qaf-step-by-step-tutorial/tree/Exercise-1">Exercise-1</a> you will have your local enviroment ready with project skeleton in eclipse. Now you are ready to create your first automated test. </p>
+
+<p>In this exercise we will create sample test case to automate google serach.
+Conisder following test case:</p>
+
+<pre><code>Open Google search page
+Search for Git reporsitory QMetry Automation Framework
+Verify that Git repository link present 
+</code></pre>
+
+<h2>
+<a id="create-locator-repository" class="anchor" href="#create-locator-repository" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create locator repository</h2>
+
+<p>To start with first of all you need to identify element locators and place into locator repositoiry.
+QAS user can use object-spy featuer and non QAS users can use firebug with firepath.</p>
+
+<p>Create new locator repository named <code>home.properties</code> and provide locators for serach box, and search button. </p>
+
+<div class="highlight highlight-source-ini"><pre><span class="pl-k">txt.searchbox</span> = <span class="pl-k">name</span>=q
+<span class="pl-k">btn.search</span> = <span class="pl-k">name</span>=btnG</pre></div>
+
+<h2>
+<a id="create-your-first-test-case-in-bdd" class="anchor" href="#create-your-first-test-case-in-bdd" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create your first Test case in BDD</h2>
+
+<ol>
+<li>Create new BDD file named <code>suite-1.bdd</code> in scenarios dir</li>
+<li>Open this file in BDD editor</li>
+<li>Create new Scenario with name 'SampleTest', Description 'Sample Test Scenario' and group 'SMOKE'.
+
+<ul>
+<li>if you are using QAS create new scenario following new scenario wizard</li>
+<li>if you are using eclipse with QAF bdd editor press ctrl+space and select Scenario snnipet</li>
+</ul>
+</li>
+<li>
+<p>You will have scenario skeleton ready as below:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">SCENARIO</span><span class="pl-k">:</span> SampleTest
+<span class="pl-c1">META</span><span class="pl-k">-</span><span class="pl-c1">DATA</span><span class="pl-k">:</span> {<span class="pl-s"><span class="pl-pds">"</span>description<span class="pl-pds">"</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">"</span>Sample Test Scenario<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>groups<span class="pl-pds">"</span></span><span class="pl-k">:</span>[<span class="pl-s"><span class="pl-pds">"</span>SMOKE<span class="pl-pds">"</span></span>]}
+
+<span class="pl-c1">END</span></pre></div>
+</li>
+<li>
+<p>Call teststeps in your Scenario. To start with for this example of google you can call predefined steps avialable with QAF-Support jar (Make sure that ivy has QAF-Support dependency added). Call steps as bellow </p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">SCENARIO</span><span class="pl-k">:</span> SampleTest
+<span class="pl-c1">META</span><span class="pl-k">-</span><span class="pl-c1">DATA</span><span class="pl-k">:</span> {<span class="pl-s"><span class="pl-pds">"</span>description<span class="pl-pds">"</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">"</span>Sample Test Scenario<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>groups<span class="pl-pds">"</span></span><span class="pl-k">:</span>[<span class="pl-s"><span class="pl-pds">"</span>SMOKE<span class="pl-pds">"</span></span>]}
+    Given get <span class="pl-s"><span class="pl-pds">'</span>/<span class="pl-pds">'</span></span>
+    When sendkeys <span class="pl-s"><span class="pl-pds">'</span>Git reporsitory QAF<span class="pl-pds">'</span></span> to <span class="pl-s"><span class="pl-pds">'</span>txt.searchbox<span class="pl-pds">'</span></span>
+    And click on <span class="pl-s"><span class="pl-pds">'</span>btn.search<span class="pl-pds">'</span></span>
+    Then verify link <span class="pl-k">with</span> partial text <span class="pl-s"><span class="pl-pds">'</span>qaf<span class="pl-pds">'</span></span> is present 
+<span class="pl-c1">END</span></pre></div>
+</li>
+</ol>
+
+<h2>
+<a id="create-your-first-test-case-in-java" class="anchor" href="#create-your-first-test-case-in-java" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create your first Test case in Java</h2>
+
+<ol>
+<li>
+<p>Create new Java Class <code>Suite1.java</code> extending 'com.qmetry.qaf.automation.ui.WebDriverTestCase' under package <code>qaf.example.tests</code> in src dir. Refer <a href="http://help.eclipse.org/neon/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2FgettingStarted%2Fqs-9.htm">Creating a Java class</a> for help. Your class should look like:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">package</span> <span class="pl-smi">qaf.example.tests</span>;
+
+<span class="pl-k">import</span> <span class="pl-smi">org.testng.annotations.Test</span>;
+<span class="pl-k">import</span> <span class="pl-smi">com.qmetry.qaf.automation.ui.WebDriverTestCase</span>;
+
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">Suite1</span> <span class="pl-k">extends</span> <span class="pl-e">WebDriverTestCase</span> {
+
+}</pre></div>
+</li>
+<li>
+<p>create new test method <code>SampleTest</code>, add import statement <code>import org.testng.annotations.Test;</code>, provide <code>@Test</code> annotation, set decription and groups</p>
+
+<div class="highlight highlight-source-java"><pre>  <span class="pl-k">@Test</span>(<span class="pl-c1">description</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>Sample Test Scenario<span class="pl-pds">"</span></span>, <span class="pl-c1">groups</span><span class="pl-k">=</span>{<span class="pl-s"><span class="pl-pds">"</span>SMOKE<span class="pl-pds">"</span></span>})
+  <span class="pl-k">public</span> <span class="pl-k">void</span> testGoogleSearch() {
+
+  }</pre></div>
+</li>
+<li>
+<p>add import statement <code>import static com.qmetry.qaf.automation.step.CommonStep.*;</code>. Use content assist (ctrl + SPACE) to refer available methods. Call steps in test method as bellow:</p>
+
+<div class="highlight highlight-source-java"><pre>     get(<span class="pl-s"><span class="pl-pds">"</span>/<span class="pl-pds">"</span></span>);
+     sendKeys(<span class="pl-s"><span class="pl-pds">"</span>Git reporsitory QAF<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>txt.searchbox<span class="pl-pds">"</span></span>);
+     click(<span class="pl-s"><span class="pl-pds">"</span>btn.search<span class="pl-pds">"</span></span>);
+     verifyLinkWithPartialTextPresent(<span class="pl-s"><span class="pl-pds">"</span>qaf<span class="pl-pds">"</span></span>);</pre></div>
+
+<p>your complete class with testcase will look like</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">package</span> <span class="pl-smi">qaf.example.tests</span>;
+
+<span class="pl-k">import</span> <span class="pl-smi">org.testng.annotations.Test</span>;
+<span class="pl-k">import</span> <span class="pl-smi">com.qmetry.qaf.automation.ui.WebDriverTestCase</span>;
+
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">Suite1</span> <span class="pl-k">extends</span> <span class="pl-e">WebDriverTestCase</span> {
+
+<span class="pl-k">@Test</span>(<span class="pl-c1">description</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>Sample Test Scenario<span class="pl-pds">"</span></span>, <span class="pl-c1">groups</span><span class="pl-k">=</span>{<span class="pl-s"><span class="pl-pds">"</span>SMOKE<span class="pl-pds">"</span></span>})
+<span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">testGoogleSearch</span>() {
+   get(<span class="pl-s"><span class="pl-pds">"</span>/<span class="pl-pds">"</span></span>);
+   sendKeys(<span class="pl-s"><span class="pl-pds">"</span>Git reporsitory QAF<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>txt.searchbox<span class="pl-pds">"</span></span>);
+   click(<span class="pl-s"><span class="pl-pds">"</span>btn.search<span class="pl-pds">"</span></span>);
+   verifyLinkWithPartialTextPresent(<span class="pl-s"><span class="pl-pds">"</span>qaf<span class="pl-pds">"</span></span>);
+}
+}</pre></div>
+</li>
+</ol>
+
+<h3>
+<a id="references" class="anchor" href="#references" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>References</h3>
+
+<ol>
+<li><a href="https://qmetry.github.io/qaf/latest/understand_dirstructure.html">Understating Directory Structure<g-emoji alias="link" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f517.png" ios-version="6.0">🔗</g-emoji></a></li>
+<li><a href="https://qmetry.github.io/qaf/latest/locator_repository.html">Locator Repository<g-emoji alias="link" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f517.png" ios-version="6.0">🔗</g-emoji></a></li>
+<li><a href="https://qmetry.github.io/qaf/latest/scenario.html">Test Authoring in BDD<g-emoji alias="link" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f517.png" ios-version="6.0">🔗</g-emoji></a></li>
+</ol>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/qmetry" class="avatar"><img src="https://avatars0.githubusercontent.com/u/20469769?v=3&amp;s=60" width="48" height="48"></a> <a href="https://github.com/qmetry">qmetry</a> maintains <a href="https://github.com/qmetry/qaf-step-by-step-tutorial">Qaf-step-by-step-tutorial</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/qmetry/qaf-step-by-step-tutorial/tarball/master" class="tar">tar</a><a href="https://github.com/qmetry/qaf-step-by-step-tutorial/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
