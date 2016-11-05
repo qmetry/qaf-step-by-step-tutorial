@@ -5,10 +5,11 @@ This repository provides a step by step guide to start using QAF.
 
 # Exercise-2
 
-**Table of contents**
+##### Table of contents
+
  1. [Create locator repository](#create-locator-repository)
  2. [Create your first Test case in BDD](#create-your-first-test-case-in-bdd)
- 3. [Create your first Test case in Java](#create_first_test_java)
+ 3. [Create your first Test case in Java](#create-your-first-test-case-in-java)
  4. [References](#references)
 
 ____
@@ -58,9 +59,7 @@ btn.search = name=btnG
     END
     ```
 
-<a name="create_first_test_java" href="#">
 ## Create your first Test case in Java 
-</a>
 
  1. Create new Java Class `Suite1.java` extending 'com.qmetry.qaf.automation.ui.WebDriverTestCase' under package `qaf.example.tests` in src dir. Refer [Creating a Java class](http://help.eclipse.org/neon/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2FgettingStarted%2Fqs-9.htm) for help. Your class should look like:
  
