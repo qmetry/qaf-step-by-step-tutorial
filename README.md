@@ -1,5 +1,5 @@
 # qaf-step-by-step-tutorial
-qaf getting started tutorial provide step by step exercise 
+qaf getting started tutorial provides step by step exercise 
 
 This repository provides a step by step guide to start using QAF.
 
