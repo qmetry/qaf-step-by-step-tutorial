@@ -6,7 +6,7 @@ This repository provides a step by step guide to start using QAF.
 # Exercise-2
 
 **Table of contents**
- 1. [Create locator repository](#create_loc_repo)
+ 1. [Create locator repository](#create-locator-repository)
  2. [Create your first Test case in BDD](#create_first_test_bdd)
  3. [Create your first Test case in Java](#create_first_test_java)
  4. [References](#references)
@@ -22,7 +22,6 @@ Open Google search page
 Search for Git reporsitory QMetry Automation Framework
 Verify that Git repository link present 
 ```
-<a name="create_loc_repo" href="#" />
 ## Create locator repository
 To start with first of all you need to identify element locators and place into locator repositoiry.
 QAS user can use object-spy featuer and non QAS users can use firebug with firepath.
