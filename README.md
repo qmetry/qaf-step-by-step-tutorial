@@ -7,7 +7,7 @@ This repository provides a step by step guide to start using QAF.
 
 **Table of contents**
  1. [Create locator repository](#create-locator-repository)
- 2. [Create your first Test case in BDD](#create_first_test_bdd)
+ 2. [Create your first Test case in BDD](#create-your-first-test-case-in-bdd)
  3. [Create your first Test case in Java](#create_first_test_java)
  4. [References](#references)
 
@@ -32,7 +32,6 @@ txt.searchbox = name=q
 btn.search = name=btnG
 ```
 
-<a name="create_first_test_bdd" href="#" />
 ## Create your first Test case in BDD
 
  1. Create new BDD file named `suite-1.bdd` in scenarios dir
@@ -113,7 +112,6 @@ public class Suite1 extends WebDriverTestCase {
 }
  ```
 
-<a name="references" href="#" />
 ### References
  1. <a href="https://qmetry.github.io/qaf/latest/understand_dirstructure.html" target="_blank">Understating Directory Structure:link:</a>
  2. <a href="https://qmetry.github.io/qaf/latest/locator_repository.html" target="_blank">Locator Repository:link:</a>
