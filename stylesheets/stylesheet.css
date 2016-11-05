@@ -456,8 +456,8 @@ h1.title {
 }
 
 .wrapper {
-  width: auto;
-  margin: 10px auto;
+  min-width: 675px;
+  margin: 0 auto;
 }
 
 #container {
