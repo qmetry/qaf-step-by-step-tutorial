@@ -113,6 +113,6 @@ public class Suite1 extends WebDriverTestCase {
  ```
 
 ### References
- 1. [Understating Directory Structure:link:](Understating Directory Structure){:target="_blank"}
- 2. [Locator Repository:link:](https://qmetry.github.io/qaf/latest/locator_repository.html){:target="_blank"}
- 3. [Test Authoring in BDD:link:](https://qmetry.github.io/qaf/latest/scenario.html){:target="_blank"}
+ 1. [Understating Directory Structure:link:](https://qmetry.github.io/qaf/latest/understand_dirstructure.html target="_blank")
+ 2. [Locator Repository:link:](https://qmetry.github.io/qaf/latest/locator_repository.html target="_blank")
+ 3. [Test Authoring in BDD:link:](https://qmetry.github.io/qaf/latest/scenario.html target="_blank")
