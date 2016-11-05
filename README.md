@@ -25,7 +25,8 @@ txt.searchbox = name=q
 btn.search = name=btnG
 ```
 
-### Create your first Test case
+### Create your first Test case in BDD
+
 1. Create new BDD file named `suite-1.bdd` in scenarios dir
 2. Open this file in BDD editor
 3. Create new Scenario with name 'SampleTest', Description 'Sample Test Scenario' and group 'SMOKE'.
@@ -43,9 +44,66 @@ btn.search = name=btnG
     ``` bdd
     SCENARIO: SampleTest
     META-DATA: {"description":"Sample Test Scenario","groups":["SMOKE"]}
-      Given get '/'
+	    Given get '/'
 	    When sendkeys 'Git reporsitory QAF' to 'txt.searchbox'
 	    And click on 'btn.search'
-	    Then verify 'link=QMetry Automation Framework' present 
+	    Then verify link with partial text 'qaf' is present 
     END
     ```
+
+### Create your first Test case in Java
+
+ 1. Create new Java Class `Suite1.java` extending 'com.qmetry.qaf.automation.ui.WebDriverTestCase' under package `qaf.example.tests` in src dir. Refer [Creating a Java class](http://help.eclipse.org/neon/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2FgettingStarted%2Fqs-9.htm) for help. Your class should look like:
+ 
+ ``` java
+package qaf.example.tests;
+
+import org.testng.annotations.Test;
+import com.qmetry.qaf.automation.ui.WebDriverTestCase;
+
+public class Suite1 extends WebDriverTestCase {
+
+}
+ ```
+ 2. create new test method `SampleTest`, add import statement `import org.testng.annotations.Test;`, provide `@Test` annotation, set decription and groups
+ 
+ ```java
+ 	@Test(description="Sample Test Scenario", groups={"SMOKE"})
+	public void testGoogleSearch() {
+	
+	}
+ ```
+ 
+ 3. add import statement `import static com.qmetry.qaf.automation.step.CommonStep.*;`. Use content assist (ctrl + SPACE) to refer available methods. Call steps in test method as bellow:
+ 
+ ```java
+ 	   get("/");
+	   sendKeys("Git reporsitory QAF", "txt.searchbox");
+	   click("btn.search");
+	   verifyLinkWithPartialTextPresent("qaf");
+ ```
+ 
+ your complet class with testcase will look like
+ 
+ ``` Java
+package qaf.example.tests;
+
+import org.testng.annotations.Test;
+import com.qmetry.qaf.automation.ui.WebDriverTestCase;
+
+public class Suite1 extends WebDriverTestCase {
+
+	@Test(description="Sample Test Scenario", groups={"SMOKE"})
+	public void testGoogleSearch() {
+	   get("/");
+	   sendKeys("Git reporsitory QAF", "txt.searchbox");
+	   click("btn.search");
+	   verifyLinkWithPartialTextPresent("qaf");
+	}
+}
+ ```
+
+### References
+ 1. [Understating Directory Structure](Understating Directory Structure)
+ 2. [Locator Repository](https://qmetry.github.io/qaf/latest/locator_repository.html)
+ 3. [Test Authoring in BDD](https://qmetry.github.io/qaf/latest/scenario.html)
