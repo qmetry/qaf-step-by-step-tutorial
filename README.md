@@ -60,8 +60,9 @@ btn.search = name=btnG
     END
     ```
 
-<a name="create_first_test_java" href="#" />
-## Create your first Test case in Java
+<a name="create_first_test_java" href="#">
+## Create your first Test case in Java 
+</a>
 
  1. Create new Java Class `Suite1.java` extending 'com.qmetry.qaf.automation.ui.WebDriverTestCase' under package `qaf.example.tests` in src dir. Refer [Creating a Java class](http://help.eclipse.org/neon/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2FgettingStarted%2Fqs-9.htm) for help. Your class should look like:
  
