@@ -3,12 +3,13 @@ qaf getting started tutorial provide step by step exercise
 
 This repository provides a step by step guide to start using QAF.
 
-#Exercise-2
+# Exercise-2
 
-## Table of contents
+** Table of contents **
  1. [Create locator repository](#create_loc_repo)
  2. [Create your first Test case in BDD](#create_first_test_bdd)
- 2. [Create your first Test case in Java](#create_first_test_java)
+ 3. [Create your first Test case in Java](#create_first_test_java)
+ 4. [References](#references)
 
 ____
 
@@ -22,7 +23,7 @@ Search for Git reporsitory QMetry Automation Framework
 Verify that Git repository link present 
 ```
 <a name="create_loc_repo" href="#" />
-### Create locator repository
+## Create locator repository
 To start with first of all you need to identify element locators and place into locator repositoiry.
 QAS user can use object-spy featuer and non QAS users can use firebug with firepath.
 
@@ -33,7 +34,7 @@ btn.search = name=btnG
 ```
 
 <a name="create_first_test_bdd" href="#" />
-### Create your first Test case in BDD
+## Create your first Test case in BDD
 
 1. Create new BDD file named `suite-1.bdd` in scenarios dir
 2. Open this file in BDD editor
@@ -60,7 +61,7 @@ btn.search = name=btnG
     ```
 
 <a name="create_first_test_java" href="#" />
-### Create your first Test case in Java
+## Create your first Test case in Java
 
  1. Create new Java Class `Suite1.java` extending 'com.qmetry.qaf.automation.ui.WebDriverTestCase' under package `qaf.example.tests` in src dir. Refer [Creating a Java class](http://help.eclipse.org/neon/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2FgettingStarted%2Fqs-9.htm) for help. Your class should look like:
  
@@ -112,6 +113,7 @@ public class Suite1 extends WebDriverTestCase {
 }
  ```
 
+<a name="references" href="#" />
 ### References
  1. <a href="https://qmetry.github.io/qaf/latest/understand_dirstructure.html" target="_blank">Understating Directory Structure:link:</a>
  2. <a href="https://qmetry.github.io/qaf/latest/locator_repository.html" target="_blank">Locator Repository:link:</a>
