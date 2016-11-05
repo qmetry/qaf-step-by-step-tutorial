@@ -41,7 +41,7 @@ btn.search = name=btnG
     * if you are using QAS create new scenario following new scenario wizard
     * if you are using eclipse with QAF bdd editor press ctrl+space and select Scenario snnipet
 4. You will have scenario skeleton ready as below:
-   ``` bdd
+   ``` javascript
     SCENARIO: SampleTest
     META-DATA: {"description":"Sample Test Scenario","groups":["SMOKE"]}
 
@@ -49,7 +49,7 @@ btn.search = name=btnG
    ```
 5. Call teststeps in your Scenario. To start with for this example of google you can call predefined steps avialable with QAF-Support jar (Make sure that ivy has QAF-Support dependency added). Call steps as bellow 
  
-    ``` bdd
+    ``` javascript
     SCENARIO: SampleTest
     META-DATA: {"description":"Sample Test Scenario","groups":["SMOKE"]}
 	    Given get '/'
