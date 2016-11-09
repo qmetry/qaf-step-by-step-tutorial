@@ -456,8 +456,7 @@ h1.title {
 }
 
 .wrapper {
-  width: 90%;
-  min-width: 675px;
+  width: 675px;
   margin: 0 auto;
 }
 

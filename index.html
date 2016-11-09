@@ -72,9 +72,27 @@
 <li><a href="#references">References</a></li>
 </ul>
 </li>
-</ul>
+<li>
+<a href="#exercise-3-run-your-first-test">Exercise-3</a>
 
-<hr>
+<ul>
+<li>
+<a href="#configure-your-run">Configure your run</a>
+
+<ul>
+<li><a href="#download-chormedriver">Download ChormeDriver</a></li>
+<li><a href="#set-application-properties">Set Application properties</a></li>
+<li><a href="#create-xml-configuration-file">Create XML Configuration file</a></li>
+</ul>
+</li>
+<li><a href="#run-your-test">Run your test</a></li>
+<li><a href="#see-report">See Report</a></li>
+<li>
+<a href="#references">References</a>
+_____</li>
+</ul>
+</li>
+</ul>
 
 <h1>
 <a id="exercise-1" class="anchor" href="#exercise-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Exercise-1</h1>
@@ -231,6 +249,76 @@ QAS user can use object-spy featuer and non QAS users can use firebug with firep
 <li><a href="https://qmetry.github.io/qaf/latest/understand_dirstructure.html">Understating Directory Structure<g-emoji alias="link" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f517.png" ios-version="6.0">🔗</g-emoji></a></li>
 <li><a href="https://qmetry.github.io/qaf/latest/locator_repository.html">Locator Repository<g-emoji alias="link" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f517.png" ios-version="6.0">🔗</g-emoji></a></li>
 <li><a href="https://qmetry.github.io/qaf/latest/scenario.html">Test Authoring in BDD<g-emoji alias="link" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f517.png" ios-version="6.0">🔗</g-emoji></a></li>
+</ol>
+
+<p>In this Exercise, we will do required run configuration and run the test on chrome browser.</p>
+
+<h1>
+<a id="configure-your-run" class="anchor" href="#configure-your-run" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configure your run</h1>
+
+<h2>
+<a id="download-chormedriver" class="anchor" href="#download-chormedriver" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Download ChormeDriver</h2>
+
+<p>You can download it from <a href="https://sites.google.com/a/chromium.org/chromedriver/downloads">here</a></p>
+
+<h2>
+<a id="set-application-properties" class="anchor" href="#set-application-properties" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Set Application properties</h2>
+
+<p>open <code>application.properties</code> file and set following properties</p>
+
+<div class="highlight highlight-source-ini"><pre><span class="pl-k">env.baseurl</span>=http://www.google.com/
+<span class="pl-k">driver.name</span>=chromeDriver
+<span class="pl-k">webdriver.chrome.driver</span>=&lt;location_of_chromedriver&gt;
+</pre></div>
+
+<h2>
+<a id="create-xml-configuration-file" class="anchor" href="#create-xml-configuration-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create XML Configuration file</h2>
+
+<p>Create/open <code>testrun_config.xml</code> under config directory</p>
+
+<h3>
+<a id="configuration-file-to-run-bdd-tests" class="anchor" href="#configuration-file-to-run-bdd-tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration file to run BDD tests</h3>
+
+<div class="highlight highlight-text-xml"><pre>
+&lt;<span class="pl-ent">suite</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>QAF Example<span class="pl-pds">"</span></span> <span class="pl-e">verbose</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">test</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>BDD Test<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">classes</span>&gt;
+            &lt;<span class="pl-ent">class</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>com.qmetry.qaf.automation.step.client.text.BDDTestFactory<span class="pl-pds">"</span></span> /&gt;
+        &lt;/<span class="pl-ent">classes</span>&gt;
+    &lt;/<span class="pl-ent">test</span>&gt;
+&lt;/<span class="pl-ent">suite</span>&gt;</pre></div>
+
+<h3>
+<a id="configuration-file-to-run-java-tests" class="anchor" href="#configuration-file-to-run-java-tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuration file to run Java tests</h3>
+
+<div class="highlight highlight-text-xml"><pre>
+&lt;<span class="pl-ent">suite</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>QAF Example<span class="pl-pds">"</span></span> <span class="pl-e">verbose</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">test</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>JAVA Test<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">packages</span>&gt;
+            &lt;<span class="pl-ent">package</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>qaf.example.tests<span class="pl-pds">"</span></span> /&gt;
+        &lt;/<span class="pl-ent">packages</span>&gt;
+    &lt;/<span class="pl-ent">test</span>&gt;
+&lt;/<span class="pl-ent">suite</span>&gt;</pre></div>
+
+<h1>
+<a id="run-your-test" class="anchor" href="#run-your-test" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Run your test</h1>
+
+<p>Right click build.xml and run as ant build. You also can right click xml configuration file and run as 'TestNG Suite'</p>
+
+<h1>
+<a id="see-report" class="anchor" href="#see-report" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>See Report</h1>
+
+<p>Open <code>dashboard.htm</code> in Firefox.</p>
+
+<h1>
+<a id="references-1" class="anchor" href="#references-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>References</h1>
+
+<ol>
+<li><a href="https://qmetry.github.io/qaf/latest/properties_list.html">List of properties</a></li>
+<li><a href="https://qmetry.github.io/qaf/latest/different_ways_of_providing_prop.html">Setting Properies</a></li>
+<li><a href="https://qmetry.github.io/qaf/latest/how_to_use_driver.html">How to use driver</a></li>
+<li><a href="https://qmetry.github.io/qaf/latest/qaf_reporting.html">QAF Reporting</a></li>
+<li><a href="http://testng.org/doc/documentation-main.html#testng-xml">XML configuration file</a></li>
 </ol>
         </article>
       </div>
